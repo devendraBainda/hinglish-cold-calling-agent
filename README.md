@@ -25,8 +25,8 @@ An intelligent voice-based AI assistant for conducting cold calls in Hinglish (H
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/hinglish-cold-caller.git
-   cd hinglish-cold-caller
+   git clone (https://github.com/devendraBainda/iMax_submission.git)
+   cd iMax_submission
    ```
 
 2. Create and activate a virtual environment:
