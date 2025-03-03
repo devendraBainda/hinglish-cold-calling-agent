@@ -131,10 +131,6 @@ To extend the application:
 - The service account used for Google Calendar should have minimal permissions
 - Customer data should be handled according to relevant privacy regulations
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 🙏 Acknowledgements
 
 - [Google Cloud Speech APIs](https://cloud.google.com/speech-to-text)
