@@ -46,7 +46,7 @@ The application consists of several Python modules:
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/hinglish-cold-calling-agent.git
+   git clone [https://github.com/devendraBainda/hinglish-cold-calling-agent.git]
    cd hinglish-cold-calling-agent
    ```
 
@@ -141,3 +141,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [OpenAI](https://openai.com/) for GPT language model
 - [LangChain](https://github.com/hwchase17/langchain) framework
 - [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) library
+
+## Demonstration Video
+- Link : https://www.loom.com/share/c9f9624b02a74b9aa805852ac8cf6bc7?sid=08793b1f-7d1c-4dfb-be69-68278596f240
