@@ -1,19 +1,40 @@
 # Hinglish Cold Calling AI Agent
 
-An intelligent voice-based AI assistant for conducting cold calls in Hinglish (Hindi-English mix) for business scenarios including product demo scheduling, candidate interviewing, and payment follow-up.
+A voice-enabled AI assistant that conducts cold calls in Hinglish (a mix of Hindi and English) for various business scenarios.
 
-## 🚀 Features
+## Project Overview
 
-- **Speech Recognition**: Captures and processes spoken Hinglish
-- **Natural Language Understanding**: Interprets user intent and responds appropriately
-- **Speech Synthesis**: Converts text responses to natural-sounding speech
-- **Google Calendar Integration**: Automatically schedules demos with customers
-- **CRM Tracking**: Logs all interactions for future reference
-- **Multiple Business Scenarios**:
-  - Product Demo Scheduling for ERP System
-  - Candidate Interviewing for Technical Roles
-  - Payment and Order Follow-up
+This application provides an AI voice assistant that can conduct cold calls in Hinglish for three key business scenarios:
 
+1. **Demo Scheduling for ERP System** - Convinces potential customers to schedule a demo for an ERP system
+2. **Candidate Interviewing** - Conducts initial screening interviews for AI/ML Engineer positions
+3. **Payment/Order Follow-up** - Handles payment reminders and order follow-ups while maintaining good customer relationships
+
+The application uses speech recognition to understand user input in Hinglish, processes it with an AI language model, and responds with synthesized speech.
+
+## Features
+
+- **Speech Recognition** - Captures and recognizes speech in Hinglish (Hindi-English mix)
+- **Natural Language Processing** - Uses advanced LLMs to understand context and generate appropriate responses
+- **Text-to-Speech** - Converts AI responses to natural-sounding Hinglish speech
+- **Google Calendar Integration** - Can schedule demos and appointments directly in Google Calendar
+- **Multiple User Interfaces**:
+  - Terminal-based command-line interface
+  - Graphical user interface built with Pygame
+- **Customer Interaction Tracking** - Logs all interactions in a file-based CRM system
+
+
+## Technical Architecture
+
+The application consists of several Python modules:
+
+- **main.py** - Entry point and service initialization
+- **utils.py** - Core functionality including speech recognition, TTS, and AI response handling
+- **system_prompts.py** - Contains conversation prompts for different scenarios
+- **recording_helper.py** - Helper class for managing speech recognition
+- **pygame_ui.py** - Graphical user interface implementation
+
+  
 ## 📋 Requirements
 
 - Python 3.8+
@@ -21,105 +42,88 @@ An intelligent voice-based AI assistant for conducting cold calls in Hinglish (H
 - OpenAI API key
 - PyAudio and compatible audio hardware
 
-## 🔧 Installation
+##  Installation
 
-1. Clone the repository:
-   ```bash
-   git clone (https://github.com/devendraBainda/iMax_submission.git)
-   cd iMax_submission
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/hinglish-cold-calling-agent.git
+   cd hinglish-cold-calling-agent
    ```
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
+2. Install required packages:
    ```
-
-3. Install dependencies:
-   ```bash
    pip install -r requirements.txt
    ```
 
-4. Set up Google Cloud credentials:
-   - Create a service account in Google Cloud Console
-   - Enable Speech-to-Text, Text-to-Speech, and Calendar APIs
-   - Generate and download a JSON key file
-   - Place the key file in the project directory as `api.json`
+3. Create a `.env` file in the project root with the following variables:
+   ```
+   GOOGLE_SERVICE_FILE_PATH=path/to/your/google-credentials.json
+   OPEN_AI_API_KEY=your-openai-api-key
+   ```
 
-5. Configure settings:
-   - Update `config/settings.py` with your API keys and preferences
+4. Ensure you have the necessary Google Cloud credentials file (JSON) for Speech-to-Text, Text-to-Speech, and Calendar APIs.
 
-## 🎮 Usage
+## Usage
 
-Run the main application:
+Run the application with:
 
-```bash
+```
 python main.py
 ```
 
-Follow the on-screen prompts to:
-1. Select a scenario (Demo Scheduling, Candidate Interviewing, or Payment Follow-up)
-2. Enter customer email (for Demo Scheduling and Payment Follow-up)
-3. Begin the conversation by speaking in Hinglish
+You'll be prompted to choose between terminal-based UI or graphical UI, then select one of the three conversation scenarios.
 
-### 🔉 Voice Commands
+### Terminal Interface
 
-- Start speaking after the "Speak now..." prompt
-- Say "exit", "quit", "stop", "बंद", or "बंद करो" to end the conversation
+In terminal mode:
+1. Select a scenario (1-3)
+2. Enter the customer email when prompted
+3. Use the SPACE key to start and stop recording
+4. Speak in Hinglish (mix of Hindi and English)
+5. Press Ctrl+C to exit
 
-## 🔍 Scenario Details
+### Graphical Interface
 
-### Demo Scheduling
+In graphical mode:
+1. Select a scenario by clicking on the appropriate button
+2. Enter the customer email in the text field (pre-filled for candidate interviews)
+3. Use the "Start Recording" button or press SPACE to begin recording
+4. Speak in Hinglish
+5. Press the "Stop Recording" button or SPACE again to stop and process
+6. Click "Back" to return to scenario selection or "Exit" to quit
 
-This scenario focuses on scheduling product demos for an ERP system. The AI agent:
-- Introduces the product benefits
-- Addresses customer questions and concerns
-- Arranges a demo session at a suitable time
-- Creates a calendar event with the customer's email
+## Speech Recognition Tips
 
-### Candidate Interviewing
+- Speak clearly in a mix of Hindi and English
+- Minimize background noise during recording
+- Use the manual recording control (SPACE key) to ensure complete phrases are captured
 
-For initial screening of job candidates, the AI agent:
-- Asks about background, skills, and experience
-- Presents technical questions related to the role
-- Evaluates communication skills
-- Provides information about next steps
+## Customization
 
-### Payment Follow-up
+### Adding New Scenarios
 
-For handling payment reminders, the AI agent:
-- Politely reminds customers about pending payments
-- Provides payment details and options
-- Addresses concerns about the payment process
-- Maintains a positive customer relationship
+1. Create a new system prompt in `system_prompts.py`
+2. Add a new handler function in `utils.py`
+3. Update the scenario selection in `main.py` and `pygame_ui.py`
 
-## 📝 Notes on Hinglish Handling
+### Modifying Prompts
 
-The system is designed to handle Hinglish speech, which is a mix of Hindi and English commonly used in India. The speech recognition and synthesis are configured for this hybrid language pattern, using the `hi-IN` language code which provides good support for Hinglish.
+Edit the `SYSTEM_PROMPTS` dictionary in `system_prompts.py` to modify the behavior of the AI assistant for different scenarios.
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
-### PyAudio Installation Issues
+- **Speech Recognition Issues** - Check microphone settings and background noise
+- **API Authentication Errors** - Verify your Google Cloud credentials and OpenAI API key
+- **Calendar Integration Problems** - Ensure your service account has the necessary Calendar API permissions
 
-If you encounter installation problems with PyAudio on Windows:
-1. Download the appropriate wheel file from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
-2. Install the wheel file directly:
-   ```bash
-   pip install [path-to-wheel-file].whl
-   ```
+## Development
 
-### Speech Recognition Problems
+To extend the application:
 
-If the system fails to recognize speech:
-- Check your microphone settings
-- Ensure you have a stable internet connection
-- Try speaking more clearly and at a moderate pace
-- Adjust ambient noise with `recognizer.adjust_for_ambient_noise(source, duration=1)`
+1. For new UI features, modify `pygame_ui.py`
+2. For new AI capabilities, update `utils.py` and `system_prompts.py`
+3. For additional service integrations, add new client initializations in `main.py`
+
 
 ## 🔒 Security Considerations
 
