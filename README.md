@@ -35,7 +35,7 @@ The application consists of several Python modules:
 - **pygame_ui.py** - Graphical user interface implementation
 
   
-## 📋 Requirements
+## Requirements
 
 - Python 3.8+
 - Google Cloud account with Speech-to-Text, Text-to-Speech, and Calendar API enabled
@@ -57,7 +57,7 @@ The application consists of several Python modules:
 
 3. Create a `.env` file in the project root with the following variables:
    ```
-   GOOGLE_SERVICE_FILE_PATH=path/to/your/google-credentials.json
+   GOOGLE_SERVICE_FILE_PATH=path-to-your-google-credentials.json
    OPEN_AI_API_KEY=your-openai-api-key
    ```
 
