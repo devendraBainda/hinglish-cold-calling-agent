@@ -125,18 +125,15 @@ To extend the application:
 3. For additional service integrations, add new client initializations in `main.py`
 
 
-## 🔒 Security Considerations
+## Security Considerations
 
 - API keys and sensitive information should be stored in environment variables or secure configuration files
 - The service account used for Google Calendar should have minimal permissions
 - Customer data should be handled according to relevant privacy regulations
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [Google Cloud Speech APIs](https://cloud.google.com/speech-to-text)
 - [OpenAI](https://openai.com/) for GPT language model
 - [LangChain](https://github.com/hwchase17/langchain) framework
 - [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) library
-
-## Demonstration Video
-- Link : https://www.loom.com/share/c9f9624b02a74b9aa805852ac8cf6bc7?sid=08793b1f-7d1c-4dfb-be69-68278596f240
